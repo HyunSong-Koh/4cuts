@@ -21,12 +21,15 @@
             margin: 0;
             display: flex;
             justify-content: center;
-            background-image: url("./background.png");
+            /* background-image: url("./background.png"); */
+            background-image: url("./16.jpg");
+            background-size: contain;
+
         }
 
         .container {
             width: 390px;
-            background-color: #ff9d73;
+            background-color: #f0b943;
             height: 100%;
         }
 
@@ -37,7 +40,7 @@
         .photo-frame{
             background-color: white;
             margin: 15px 20px;
-            height: 200px;
+            height: 250px;
             position: relative;
 
             background-size: cover;
@@ -63,20 +66,22 @@
             color: white;
         }
         
+
+
         #image1 {
-            background-image: url("./img1.png");
+            background-image: url("./01-1.jpg");
         }
 
         #image2 {
-            background-image: url("./img2.png");
+            background-image: url("./04-1.jpg");
         }
 
         #image3 {
-            background-image: url("./img3.png");
+            background-image: url("./07-1.jpg");
         }
 
         #image4 {
-            background-image: url("./img4.png");
+            background-image: url("./14-1.jpg");
         }
         
         .photo_description {
@@ -96,7 +101,7 @@
             bottom: 0;
             transform: translate(-50%);
             left: 50%;
-            opacity: 0; //초반에 페이지 열릴 때 기본으로 안보이게 하기 위한 설정이에요
+            opacity: 0; 
             
         }
 
@@ -130,9 +135,12 @@
             } else if (number === 2) {
                 document.querySelector("#desc2").classList.remove("hideText");
                 document.querySelector("#desc2").classList.add("showText");
-            } else {
+            } else if (number === 3) {
                 document.querySelector("#desc3").classList.remove("hideText");
                 document.querySelector("#desc3").classList.add("showText");
+            } else {
+                document.querySelector("#desc4").classList.remove("hideText");
+                document.querySelector("#desc4").classList.add("showText");
             }
         }
 
@@ -146,16 +154,19 @@
             } else if (number === 2) {
                 document.querySelector("#desc2").classList.remove("showText");
                 document.querySelector("#desc2").classList.add("hideText");
-            } else {
+            } else if (number === 3) {
                 document.querySelector("#desc3").classList.remove("showText");
                 document.querySelector("#desc3").classList.add("hideText");
+            } else {
+                document.querySelector("#desc4").classList.remove("showText");
+                document.querySelector("#desc4").classList.add("hideText");
             }
         }
 
         // 클릭 기능
         // 1. 선택된 사진의 숫자를 가진 텍스트를 alert 형태로 출력해줌
         function alertText(number) {
-            alert(`${number}번째 추억이에요! 눌러주셔서 감사합니다 :)`);
+            alert(`${number}번째 추억 :)`);
         }
 
     </script>
@@ -170,9 +181,10 @@
                 onclick="alertText(1)"
             >
                 <span id="desc1" class="photo_description">
-                    첫 번째 이미지 설명
+                    유비니랑 첫 여행!
                 </span>
             </div>
+
             <div id="image2" class="photo-frame"
                 onmouseover="hideText(2)"
                 onmouseout="showText(2)"
@@ -182,6 +194,7 @@
                     두 번째 이미지 설명
                 </span>
             </div>
+
             <div id="image3" class="photo-frame"
                 onmouseover="hideText(3)"
                 onmouseout="showText(3)"
@@ -191,24 +204,31 @@
                     세 번째 이미지 설명
                 </span>
             </div>
+            
+            <div id="image4" class="photo-frame"
+                onmouseover="hideText(4)"
+                onmouseout="showText(4)"
+                onclick="alertText(4)"
+            >
+                <span id="desc4" class="photo_description">
+                  네 번째 이미지 설명
+                </span>
+            </div>
+
             <div class="photo-frame">
-                <!-- <span id="desc4" class="photo_description">
-                    네 번째 이미지 설명
-                </span> -->
                 <iframe
-                    src="https://www.youtube.com/embed/TWz1btekxfs"
+                    src="https://www.youtube.com/embed/0J0sQJC4hOA"
                     frameborder="0"
                     class="video"
                 ></iframe>
             </div>
 		</div>
         <div class="footer">
-            <p class="f-title">Happy Lunch Time</p>
-            <p class="f-date">2023.01.25</p>
+            <p class="f-title">현송 ❤ 유빈</p>
+            <p class="f-date">since. 2022.5.5</p>
         </div>
     </div>        
 </body>
 </html>
-
 
 
